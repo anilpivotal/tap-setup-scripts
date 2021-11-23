@@ -1,20 +1,9 @@
 #!/bin/bash
 
 cat <<EOF
-This script will install the pre-requisite tooling for Tanzu Application Platform
+This script will install the pre-requisite tooling for Tanzu Community Edition
 on Ubuntu-like systems.
 
-You may be prompted for your password for 'sudo' commands and you will
-also need to supply a 'UAA API refresh token' to access files from the Tanzu
-Network site. To obtain such a token:
-
-* Go to https://network.tanzu.vmware.com
-* Sign in
-* Select the drop-down menu that appears when you click on your name
-  at the top right-hand corner of the page
-* Click on 'Edit Profile'
-* At the bottom of the page click on 'Request New Refresh Token'
-* Make a copy of the token
 
 EOF
 read -p "Hit return to continue: " GO
