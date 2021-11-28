@@ -84,4 +84,11 @@ log "Installing kp"
 curl -Lo $DOWNLOADS/kp https://github.com/vmware-tanzu/kpack-cli/releases/download/v0.4.1/kp-linux-0.4.1
 sudo install -o root -g root -m 0755 $DOWNLOADS/kp /usr/local/bin/kp
 
+log "Installing Homebrew"
+
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+log "Installing TCE"
+brew install vmware-tanzu/tanzu/tanzu-community-edition
+
 log "Done"
