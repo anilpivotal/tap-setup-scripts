@@ -84,13 +84,15 @@ log "Installing kp"
 curl -Lo $DOWNLOADS/kp https://github.com/vmware-tanzu/kpack-cli/releases/download/v0.4.1/kp-linux-0.4.1
 sudo install -o root -g root -m 0755 $DOWNLOADS/kp /usr/local/bin/kp
 
-log "Installing Homebrew"
-
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-echo 'eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"' >> $HOME/.profile
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-brew install gcc
 
 log "Installing TCE"
-brew install vmware-tanzu/tanzu/tanzu-community-edition
+curl -H "Accept: application/vnd.github.v3.raw" \
+    -L https://api.github.com/repos/vmware-tanzu/community-edition/contents/hack/get-tce-release.sh | \
+    bash -s v0.10.0-rc.1 linux
+tar xzvf tce-linux-amd64-v0.10.0-rc.1.tar.gz  
+cd tce-linux-amd64-v0.10.0-rc.1
+./install.sh
+cd
+cd
+    
 log "Done"
