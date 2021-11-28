@@ -92,7 +92,7 @@ curl -H "Accept: application/vnd.github.v3.raw" \
 tar xzvf tce-linux-amd64-v0.10.0-rc.1.tar.gz  
 cd tce-linux-amd64-v0.10.0-rc.1
 ./install.sh
-cd
-cd
+cd ..
+
     
 log "Done"
